@@ -1,0 +1,68 @@
+### Notes for Self - Security Assessment Report
+
+#### Findings and Recommendations
+
+**Website 1: 10.3.21.141:8000**
+
+- **Angular Template Injection**:
+  - **Issue**: Attackers can run JavaScript code in users' browsers.
+  - **Recommendation**: Sanitize inputs, update Angular, use output encoding, and implement a Content Security Policy (CSP).
+
+- **Cross-Site Scripting (XSS)**:
+  - **Issue**: Malicious scripts can be injected and run on the site.
+  - **Recommendation**: Improve input validation, sanitize inputs, and use CSP.
+
+**Website 2: 10.3.21.141:8008**
+
+- **Client-State Manipulation**:
+  - **Issue**: Users can change data sent back to the server to gain unauthorized access.
+  - **Recommendation**: Implement server-side checks, secure session management, and validate parameters.
+
+- **Cross-Site Request Forgery (CSRF)**:
+  - **Issue**: Attackers can trick users into performing unwanted actions.
+  - **Recommendation**: Use CSRF tokens, limit cookie usage to the same origin, and implement referrer policies.
+
+**Website 3: www.hackthissite.org**
+
+- **Level 1: Hardcoded Passwords**:
+  - **Issue**: Passwords are stored directly in the code.
+  - **Recommendation**: Store passwords securely, use access controls, encrypt passwords, and conduct regular security checks.
+
+- **Level 2: Bypass Password Protection**:
+  - **Issue**: Users can bypass login by submitting empty forms.
+  - **Recommendation**: Ensure all files are present, show clear error messages, verify on the server, and secure login forms.
+
+- **Level 3: Directory Traversal**:
+  - **Issue**: Users can access files outside intended directories.
+  - **Recommendation**: Validate inputs, limit file access, check inputs on the server, and use security headers.
+
+- **Level 4: Insecure Direct Object Reference (IDOR)**:
+  - **Issue**: Users can access unauthorized internal objects.
+  - **Recommendation**: Hide internal references, control access, monitor for misuse, and limit user actions.
+
+- **Level 5: DOM Manipulation**:
+  - **Issue**: Users can manipulate the DOM directly.
+  - **Recommendation**: Validate user inputs, use CSP, check messages, and educate users on security.
+
+- **Level 6: Weak Encryption**:
+  - **Issue**: Encryption is weak and easily broken.
+  - **Recommendation**: Use strong encryption, protect keys, choose trusted tools, and stay updated on security.
+
+- **Level 7: Command Injection**:
+  - **Issue**: Users can run commands on the host system.
+  - **Recommendation**: Monitor inputs, use safe commands, write secure code, and separate privileges.
+
+- **Level 8: Server-Side Includes (SSI) Injection**:
+  - **Issue**: Users can inject commands via SSI.
+  - **Recommendation**: Validate user inputs, set server rules, and check everything before use.
+
+- **Level 9: SSI Injection (Repeated)**:
+  - **Issue**: Same as Level 8.
+  - **Recommendation**: Same as Level 8.
+
+- **Level 10: Insecure Cookie Handling**:
+  - **Issue**: Cookies can be manipulated to gain unauthorized access.
+  - **Recommendation**: Use strong cookies, keep sessions secure, encrypt data, and check for problems regularly.
+
+#### Conclusion
+By addressing these vulnerabilities, we can greatly enhance the security of the web applications, protect user data, and prevent unauthorized access.
